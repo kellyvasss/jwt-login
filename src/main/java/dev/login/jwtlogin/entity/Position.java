@@ -33,4 +33,8 @@ public class Position {
     public void setPositionType(PositionType positionType) {
         this.positionType = positionType;
     }
+    @Override
+    public String toString() {
+        return positionType.toString();
+    }
 }

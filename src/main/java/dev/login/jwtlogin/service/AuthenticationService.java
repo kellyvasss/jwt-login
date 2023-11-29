@@ -64,12 +64,18 @@ public class AuthenticationService {
             } else {
                 // Användaren finns inte i databasen, skicka vidare till registrering
                 registerUser(username, password);
-                loginUser(username, password);
+                Optional<User> newUser = userRepository.findByUsername(username);
+                Authentication auth = authenticationManager.authenticate(
+                        new UsernamePasswordAuthenticationToken(username, password)
+                );
+                String token = tokenService.generateToken(auth);
+                return new LoginResponseDTO(newUser.get(), token);
+
             }
 
         } catch (AuthenticationException e) {
             throw new RuntimeException("Misslyckades med authentisering.");
         }
-        return null;}
+    }
 
 }

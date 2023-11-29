@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -44,9 +45,16 @@ public class PublicController {
     @GetMapping("")
     public String getAll() {
         List<User> allUsers = userService.getAllUsers();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String result = "ALLA ANVÄNDARE:";
         for (User user : allUsers) {
-            result += String.format("\nID: %d\nUsername: %s\n", user.getId(), user.getUsername());
+            result += String.format(
+                    "\n\nID: %d\nUsername: %s\nPosition: %s\nLön: %d\nRegistrerad: %s\n",
+                    user.getId(),
+                    user.getUsername(),
+                    user.getPosition() != null ? user.getPosition().toString() : "-",
+                    user.getSalary(),
+                    user.getRegistered());
         } return result;
     }
 }
