@@ -20,7 +20,7 @@ public class User implements UserDetails {
     private String username;
     private String password;
     private Instant registered;
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.PERSIST) // har egentligen ingen betydelse här med CascadeType
     @JoinColumn(name = "position_id")
     private Position position;
     @ManyToMany(fetch=FetchType.EAGER)
