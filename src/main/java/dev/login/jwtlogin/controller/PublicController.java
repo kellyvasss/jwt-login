@@ -46,7 +46,7 @@ public class PublicController {
         List<User> allUsers = userService.getAllUsers();
         String result = "ALLA ANVÄNDARE:";
         for (User user : allUsers) {
-            result += String.format("\nUsername: %s\n", user.getUsername());
+            result += String.format("\nID: %d\nUsername: %s\n", user.getId(), user.getUsername());
         } return result;
     }
 }
