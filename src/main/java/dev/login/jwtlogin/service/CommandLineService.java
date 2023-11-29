@@ -70,7 +70,8 @@ public class CommandLineService {
 
 
             // Lägg till användare i tabellen
-            User adminUser = new User(username,
+            User adminUser = new User(
+                    username,
                     passwordEncoder.encode(password),
                     roleSet);
 
