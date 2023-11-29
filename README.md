@@ -9,10 +9,11 @@
 
 * Environment variables for the username and password for your MySQL database-connection. 
     * Set up for Linux:
-          export DB_USERNAME=myusername
-          export DB_PASSWORD=mypassword
+          export DB_USERNAME={myusername}
+          export DB_PASSWORD={mypassword}
           java -jar dinapplikation.jar
     * Set up for Windows:
-          set DB_USERNAME=myusername
-          set DB_PASSWORD=mypassword
+          set DB_USERNAME={myusername}
+          set DB_PASSWORD={mypassword}
           java -jar dinapplikation.jar
+* To avoid setting up environment varibles, set your name and password directly in the properties file.
