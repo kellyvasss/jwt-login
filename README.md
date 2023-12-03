@@ -12,7 +12,7 @@
 
 ## Run the applicatiation
 * If you want to test the diffrent endpoints (GET, PUT, DELETE, POST) you need the have Postman/Insomnia or any other service that allows you to test API's.
-* The route for the endpoints always starts with "http://localhost:8080",then it will be different routes, for example ("http://localhost:8080/login") to make the loginrequest.
+* The route for the endpoints always starts with "http://localhost:8080", then it will be different routes, for example ("http://localhost:8080/login") to make the loginrequest.
 
 ## Security configuratiation
 By default, the first user you are creating (in the code, provided the username and password value in the loginfile) will have the "ADMIN" role, meaning you can access all the endpoints included in the project. 
